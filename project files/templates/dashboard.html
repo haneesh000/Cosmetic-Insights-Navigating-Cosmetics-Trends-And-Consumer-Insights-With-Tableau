@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard - Cosmetics Analysis{% endblock %}
+
+{% block content %}
+<style>
+  .dashboard-wrapper {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .dashboard-heading {
+    font-size: 2.5em;
+    color: #1f2f3e;
+    margin-bottom: 10px;
+  }
+
+  .dashboard-subheading {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+  }
+
+  .dashboard-image {
+    max-width: 100%;
+    width: 95%;
+    height: auto;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Tableau embed containers: ensure visible and give a generous min-height */
+  #tableau-embed,
+  #tableau-embed-2 {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 10px;
+    min-height: 700px;
+    margin-bottom: 40px;
+    background: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .dashboard-heading {
+      font-size: 2em;
+    }
+
+    .dashboard-image {
+      width: 100%;
+    }
+    #tableau-embed,
+    #tableau-embed-2 {
+      min-height: 1200px;
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="dashboard-wrapper">
+  <h1 class="dashboard-heading">Dashboards</h1>
+  <p class="dashboard-subheading">Dashboard 1</p>
+  <div id="tableau-embed" class="dashboard-image" style="padding:0; box-shadow:none;">
+    <div class='tableauPlaceholder' id='viz1772172413909' style='position: relative; width:100%;'>
+      <noscript>
+        <a href='#'>
+          <img alt=' ' src='https://public.tableau.com/static/images/to/topbrands_17719367913250/ResponsiveAndDesignOfDashboardProducdRankingAndDetailedAnalysis/1_rss.png' style='border: none; width:100%;' />
+        </a>
+      </noscript>
+      <object class='tableauViz' style='display:none; width:100%;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='embed_code_version' value='3' />
+        <param name='site_root' value='' />
+        <param name='name' value='topbrands_17719367913250/ResponsiveAndDesignOfDashboardProducdRankingAndDetailedAnalysis' />
+        <param name='tabs' value='yes' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image' value='https://public.tableau.com/static/images/to/topbrands_17719367913250/ResponsiveAndDesignOfDashboardProducdRankingAndDetailedAnalysis/1.png' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+        <param name='language' value='en-US' />
+      </object>
+    </div>
+  </div>
+
+  <p class="dashboard-subheading">Dashboard 2</p>
+  <div id="tableau-embed-2" class="dashboard-image" style="padding:0; box-shadow:none;">
+    <div class='tableauPlaceholder' id='viz1772172492589' style='position: relative; width:100%;'>
+      <noscript>
+        <a href='#'>
+          <img alt=' ' src='https://public.tableau.com/static/images/to/topbrands_17719367913250/ProductSuitabilityOverview/1_rss.png' style='border: none; width:100%;' />
+        </a>
+      </noscript>
+      <object class='tableauViz' style='display:none; width:100%;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='embed_code_version' value='3' />
+        <param name='site_root' value='' />
+        <param name='name' value='topbrands_17719367913250/ProductSuitabilityOverview' />
+        <param name='tabs' value='yes' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image' value='https://public.tableau.com/static/images/to/topbrands_17719367913250/ProductSuitabilityOverview/1.png' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+        <param name='language' value='en-US' />
+      </object>
+    </div>
+  </div>
+</div>
+<script type='text/javascript'>
+  (function() {
+    var vizIds = ['viz1772172413909', 'viz1772172492589'];
+
+    vizIds.forEach(function(id) {
+      var divElement = document.getElementById(id);
+      if (!divElement) return;
+      var vizElement = divElement.getElementsByTagName('object')[0];
+      if (!vizElement) return;
+      vizElement.style.display = 'block';
+      vizElement.style.width = '100%';
+      var w = divElement.offsetWidth || divElement.clientWidth || 1024;
+      var h;
+      if (w > 800) {
+        h = Math.max(1014, Math.round(w * 0.75));
+      } else if (w > 500) {
+        h = Math.max(1014, Math.round(w * 0.75));
+      } else {
+        h = Math.max(1700, Math.round(w * 1.77));
+      }
+      vizElement.style.height = h + 'px';
+    });
+
+    // Insert Tableau API once (it will initialize all tableauViz objects)
+    var firstDiv = document.getElementById(vizIds[0]);
+    if (firstDiv) {
+      var firstViz = firstDiv.getElementsByTagName('object')[0];
+      if (firstViz) {
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        firstViz.parentNode.insertBefore(scriptElement, firstViz);
+      }
+    }
+  })();
+</script>
+{% endblock %}

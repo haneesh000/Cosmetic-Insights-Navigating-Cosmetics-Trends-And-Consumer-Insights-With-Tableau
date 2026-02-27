@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% block title %}About - Cosmetics Analysis{% endblock %}
+
+{% block content %}
+<!-- Font Awesome CDN (Add in base.html head section if not already included) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  .about-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 20px;
+    gap: 20px;
+  }
+
+  .about-image {
+    flex: 1 1 40%;
+    max-width: 500px;
+    padding: 10px;
+  }
+
+  .about-content {
+    flex: 1 1 50%;
+    padding: 10px 20px;
+  }
+
+  .about-content h1 {
+    font-size: 2em;
+    color: #1f2f3e;
+    margin-bottom: 15px;
+  }
+
+  .about-content p {
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 1.05em;
+  }
+
+  .feature-block {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+  }
+
+  .feature-icon {
+    font-size: 1.6em;
+    margin-right: 15px;
+    color: #1abc9c;
+    min-width: 30px;
+    margin-top: 4px;
+  }
+
+  .feature-text h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #1f2f3e;
+  }
+
+  .feature-text p {
+    margin: 5px 0 0;
+    color: #555;
+    font-size: 0.95em;
+  }
+
+  @media (max-width: 768px) {
+    .about-section {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .about-content {
+      text-align: center;
+    }
+
+    .feature-block {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .feature-icon {
+      margin-bottom: 8px;
+    }
+  }
+</style>
+
+<div class="about-section">
+  <div class="about-image">
+    <img src="{{ url_for('static', filename='About.jpeg') }}" alt="About Image" style="width: 100%; height: auto; border-radius: 8px;">
+  </div>
+
+  <div class="about-content">
+    <h1>Discover Your Perfect Skincare</h1>
+    <p>Find the best products for your skin with our expert analysis and recommendations.</p>
+
+    <div class="feature-block">
+      <div class="feature-icon"><i class="fas fa-filter"></i></div>
+      <div class="feature-text">
+        <h3>Tailored for You</h3>
+        <p>Explore top skincare brands and products that match your unique skin type and needs.</p>
+      </div>
+    </div>
+
+    <div class="feature-block">
+      <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+      <div class="feature-text">
+        <h3>Easy and Informative</h3>
+        <p>Get clear, straightforward advice without the jargon, making skincare simple and fun.</p>
+      </div>
+    </div>
+
+    <div class="feature-block">
+      <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+      <div class="feature-text">
+        <h3>Trusted Recommendations</h3>
+        <p>Our team of skincare enthusiasts provides reliable insights to help you make the best choices.</p>
+      </div>
+    </div>
+
+    <div class="feature-block">
+      <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+      <div class="feature-text">
+        <h3>Start Your Journey</h3>
+        <p>Dive into the world of skincare and find what works best for you with data-driven guidance.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block title %}Story - Cosmetics Analysis{% endblock %}
+
+{% block content %}
+<style>
+  .story-wrapper {
+    padding: 10px 20px 40px 20px;
+    text-align: center;
+  }
+
+  .story-heading {
+    font-size: 2.5em;
+    color: #1f2f3e;
+    margin-bottom: 30px;
+  }
+
+  .story-image {
+    max-width: 100%;
+    width: 95%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Tableau embed container for story */
+  #tableau-story {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 10px;
+    min-height: 700px;
+    margin: 20px auto;
+    background: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .story-heading {
+      font-size: 2em;
+    }
+
+    .story-image {
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="story-wrapper">
+  <h1 class="story-heading">Story</h1>
+
+  <p class="story-subheading">Story 1</p>
+  <div id="tableau-story" class="story-image">
+    <div class='tableauPlaceholder' id='viz1772185376828' style='position: relative; width:100%;'>
+      <noscript>
+        <a href='http://127.0.0.1:5000'>
+          <img alt=' ' src='https://public.tableau.com/static/images/to/topbrands_17719367913250/Story1/1_rss.png' style='border: none; width:100%;' />
+        </a>
+      </noscript>
+      <object class='tableauViz' style='display:none; width:100%;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='embed_code_version' value='3' />
+        <param name='site_root' value='' />
+        <param name='name' value='topbrands_17719367913250/Story1' />
+        <param name='tabs' value='yes' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image' value='https://public.tableau.com/static/images/to/topbrands_17719367913250/Story1/1.png' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+        <param name='language' value='en-US' />
+      </object>
+    </div>
+  </div>
+</div>
+<script type='text/javascript'>
+  (function() {
+    var id = 'viz1772185376828';
+    var divElement = document.getElementById(id);
+    if (!divElement) return;
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    if (!vizElement) return;
+    vizElement.style.display = 'block';
+    vizElement.style.width = '100%';
+    var w = divElement.offsetWidth || divElement.clientWidth || 1024;
+    var h;
+    if (w > 800) {
+      h = Math.max(1014, Math.round(w * 0.75));
+    } else if (w > 500) {
+      h = Math.max(1014, Math.round(w * 0.75));
+    } else {
+      h = Math.max(1700, Math.round(w * 1.77));
+    }
+    vizElement.style.height = h + 'px';
+
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+  })();
+</script>
+{% endblock %}
